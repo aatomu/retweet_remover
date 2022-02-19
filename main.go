@@ -176,12 +176,16 @@ func main() {
 			fmt.Printf("URL: https://twitter.com/i/status/%s Time:%s\n", tweet.Tweet.IDStr, logTime)
 			fmt.Printf("%s\n", tweet.Tweet.FullText)
 			// 削除
+			fmt.Printf("Delete Wait...     ")
+			time.Sleep(time.Second * 5)
+			fmt.Printf("Deleting...     ")
 			RetweetID, err := strconv.Atoi(tweet.Tweet.ID)
 			atomicgo.PrintError("Failed Convert Str to Int", err)
 			_, err = api.UnRetweet(int64(RetweetID), true)
 			atomicgo.PrintError("Failed UnRetweet by RetweetID", err)
 			//_, err = api.DeleteTweet(int64(RetweetID), true)
 			//atomicgo.PrintError("Failed Delete Retweet", err)
+			fmt.Printf("Deleted!\n")
 			// API上限対策
 			time.Sleep(time.Second * 10)
 		}
