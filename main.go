@@ -187,7 +187,7 @@ func main() {
 			//atomicgo.PrintError("Failed Delete Retweet", err)
 			fmt.Printf("Deleted!\n")
 			// API上限対策
-			time.Sleep(time.Second * 10)
+			time.Sleep(time.Second * 15)
 		}
 	}
 	log.Println("- - - - - - - - - - Retweet Delete End - - - - - - - - - -")
