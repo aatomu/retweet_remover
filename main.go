@@ -177,7 +177,7 @@ func main() {
 			fmt.Printf("%s\n", tweet.Tweet.FullText)
 			// 削除
 			fmt.Printf("Delete Wait...     ")
-			time.Sleep(time.Second * 5)
+			time.Sleep(time.Second * 10)
 			fmt.Printf("Deleting...     ")
 			RetweetID, err := strconv.Atoi(tweet.Tweet.ID)
 			atomicgo.PrintError("Failed Convert Str to Int", err)
@@ -187,7 +187,7 @@ func main() {
 			//atomicgo.PrintError("Failed Delete Retweet", err)
 			fmt.Printf("Deleted!\n")
 			// API上限対策
-			time.Sleep(time.Second * 15)
+			time.Sleep(time.Second * 10)
 		}
 	}
 	log.Println("- - - - - - - - - - Retweet Delete End - - - - - - - - - -")
