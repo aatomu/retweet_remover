@@ -1,7 +1,6 @@
 # tweet remover
 Golangで自分のために作成  
-開発環境:rpi4(8gb) golang(go1.16.7 linux/arm64)  
-必要用件: go v1.16.7+  
+開発環境:rpi4(8gb) golang(go1.17.8 linux/arm64)  
 
 ## -設定-  
 同ディレクトリに以下のことを準備/設定する  

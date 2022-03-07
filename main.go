@@ -139,7 +139,7 @@ type Twitter []struct {
 func main() {
 	// データを読み取り
 	log.Println("- - - - - - - - - - Tweet Archive Loading Start - - - - - - - - - -")
-	dataByte, _ := atomicgo.ReadAndCreateFileFlash("./tweet.js")
+	dataByte, _ := atomicgo.ReadFile("./tweet.js")
 	log.Println("- - - - - - - - - - Tweet Archive Loading End - - - - - - - - - -")
 	var tweets Twitter
 	// []bytrを構造体に変換
