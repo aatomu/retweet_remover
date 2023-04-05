@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 	"sort"
 	"strconv"
 	"time"
@@ -139,7 +140,7 @@ type Twitter []struct {
 func main() {
 	// データを読み取り
 	log.Println("- - - - - - - - - - Tweet Archive Loading Start - - - - - - - - - -")
-	dataByte, _ := atomicgo.ReadFile("./tweet.js")
+	dataByte, _ := os.ReadFile("./tweet.js")
 	log.Println("- - - - - - - - - - Tweet Archive Loading End - - - - - - - - - -")
 	var tweets Twitter
 	// []bytrを構造体に変換
@@ -161,13 +162,13 @@ func main() {
 	// 削除済みRT数
 	count := 0
 
-	key, _ := atomicgo.TwitterAPIkeysGet("twitterAPIKeys.json")
-	api := atomicgo.TwitterAPISet(key)
+	key, _ := netapi.TwitterAPIkeysGet("twitterAPIKeys.json")
+	api := key.TwitterAPISet()
 	log.Println("- - - - - - - - - - Retweet Delete Start - - - - - - - - - -")
 	// データを全部参照
 	for _, tweet := range tweets {
 		// RTかを確認
-		if atomicgo.StringCheck(tweet.Tweet.FullText, "^RT @") {
+		if atomicgo.RegMatch(tweet.Tweet.FullText, "^RT @") {
 			// RT時間を入手
 			tweetTime, _ := time.Parse("Mon Jan 2 15:04:05 -0700 2006", tweet.Tweet.CreatedAt)
 			logTime := tweetTime.Format("2006/01/02 15:04:05")
