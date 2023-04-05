@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/atomu21263/atomicgo"
+	"github.com/atomu21263/atomicgo/netapi"
 )
 
 // twitter archiveのデータ構造
