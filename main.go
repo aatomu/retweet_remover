@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/atomu21263/atomicgo"
-	"github.com/atomu21263/atomicgo/netapi"
+	"github.com/aatomu/atomicgo"
+	"github.com/aatomu/atomicgo/netapi"
 )
 
 // twitter archiveのデータ構造

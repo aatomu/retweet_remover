@@ -1,8 +1,8 @@
-module github.com/atomu21263/retweet_remover
+module github.com/aatomu/retweet_remover
 
 go 1.20
 
-require github.com/atomu21263/atomicgo v0.0.0-20230405110503-26b7d28fe10d
+require github.com/aatomu/atomicgo v0.0.0-20230405110503-26b7d28fe10d
 
 require (
 	github.com/ChimeraCoder/anaconda v2.0.0+incompatible // indirect
